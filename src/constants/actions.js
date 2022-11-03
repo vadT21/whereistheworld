@@ -1,0 +1,3 @@
+export const THEME_ACTIONS = {
+  CHANGE_THEME: 'CHANGE_THEME',
+};
