@@ -1,8 +1,18 @@
 import axios from 'axios';
-import {useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import {
+  useState, useEffect,
+} from 'react';
+import { 
+  useNavigate,
+} from 'react-router-dom';
 import { filterByCode } from '../../../constants';
-import { Tag, TagGroup, Meta, Button, DetailsImg, DetailsInfo, DetailsStyle, DetailsTitle, List, ListGroup, ListItem } from './components';
+import { 
+  Tag, TagGroup, 
+  Meta, Button, 
+  DetailsImg, DetailsInfo, 
+  DetailsStyle, DetailsTitle, 
+  List, ListGroup, 
+  ListItem } from './components';
 
 const Details = (props) => {
   const name = props.name.official;
@@ -34,11 +44,11 @@ const Details = (props) => {
             )));
     }
   }, [borders]);
-  console.log(neighbours);
+
   const navigate = useNavigate();
 
   const navigateHandler = (id) => {
-    navigate(`/country/${id}`);
+    navigate(`/whereistheworld/country/${id}`);
   };
 
   return (
