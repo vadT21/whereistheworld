@@ -17,7 +17,7 @@ const Routing = lazy( () => import('./pages/routing/Routing'));
 
 function App() {
 
-  const currentTheme = useSelector(state => state.themeReducer.theme);
+  const currentTheme = useSelector(state => state.themeReducerWITW.theme);
   const [countries, setCountries] = useState([]);
 
   return (
