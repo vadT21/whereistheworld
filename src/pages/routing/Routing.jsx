@@ -17,7 +17,7 @@ const Routing = ({countries, setCountries}) => {
         element={<HomePage countries={countries} setCountries={setCountries}/>}
       />
       <Route 
-        path="/whereistheworld/country/:name"
+        path="/whereistheworld/country/:id"
         element={<CountryPage />}
       />
       <Route 
