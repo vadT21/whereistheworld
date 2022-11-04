@@ -12,6 +12,7 @@ export const CardStyle = styled.article`
     background-color: ${({theme}) => theme.color.elements};
     border-radius: ${({theme}) => theme.borderRadius};
     box-shadow: ${({theme}) => theme.shadow};
+    height: 325px;
 `;
 
 export const CardImg = styled.img`
