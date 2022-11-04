@@ -1,18 +1,22 @@
-import {useState, useEffect} from 'react';
-import { useParams, Link } from 'react-router-dom';
+import {
+  useState, useEffect,
+} from 'react';
+import { 
+  useParams,
+} from 'react-router-dom';
 import axios from 'axios';
 import { searchByCountry } from '../constants/links';
 import Details from '../components/main/details/Details';
 
 const CountryPage = () => {
 
-  const {name} = useParams();
+  const {id} = useParams();
   const [country, setCountry] = useState(null);
   useEffect(() => {
     axios
-      .get(searchByCountry(name))
+      .get(searchByCountry(id))
       .then(({data}) => setCountry(data[0]));
-  }, [name]);
+  }, [id]);
 
   return (
     <>
@@ -21,7 +25,6 @@ const CountryPage = () => {
       <Details {...country}/>
       }
     </>
-    
   );
 };
 
