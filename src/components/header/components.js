@@ -6,6 +6,7 @@ export const HeaderStyle = styled.header`
     background-color: ${({theme}) => theme.color.elements};
     width: 100%;
     margin-bottom: 20px;
+    box-shadow: ${({theme}) => theme.shadow};
 `;
 
 export const HeaderTitle = styled.h1`
@@ -17,6 +18,10 @@ export const HeaderTitle = styled.h1`
 export const HeaderElement = styled.div`
     color: ${({theme}) => theme.color.text};
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
 `;
 export const HeaderContainer = styled.div`
     display: flex;

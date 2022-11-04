@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  useState,
+} from 'react';
+import {
+  IoContrastOutline,
+  IoContrast,
+} from 'react-icons/io5';
 import { 
   HeaderStyle, 
   HeaderTitle, 
@@ -24,11 +30,14 @@ const Header = () => {
   const dispatch = useDispatch();
   const defaultTheme = useSelector(state => state.themeReducerWITW.theme.title);
 
+  const [icon, setIcon] = useState(true);
+
   const changeThemeHandler = () => {
     const theme = defaultTheme === 'light' 
       ? darkTheme 
       : lightTheme;
     dispatch(changeTheme(theme));
+    setIcon(!icon);
   };
 
   return (
@@ -41,8 +50,13 @@ const Header = () => {
         </HeaderLink>
         <HeaderElement onClick = {changeThemeHandler}>
           {
-            defaultTheme
+            icon
+              ?<IoContrastOutline />
+              :<IoContrast />
           }
+          {
+            defaultTheme
+          } mode
         </HeaderElement>
       </HeaderContainer> 
     </HeaderStyle>
