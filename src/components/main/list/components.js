@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import {device} from '../../../styles/propoptions';
+import {
+  device,
+} from '../../../styles/propoptions';
 
 export const Style = styled.section` 
     width: 100%;
@@ -16,7 +18,7 @@ export const Style = styled.section`
     @media ${device.tablet}{
         grid-template-columns: repeat(2, 1fr);
         gap: 3rem;
-        padding: 2rem 1rem;
+        padding: 2rem 3rem;
     }
     @media ${device.laptopS}{
         grid-template-columns: repeat(3, 1fr);
