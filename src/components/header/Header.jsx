@@ -22,7 +22,7 @@ import {
 const Header = () => {
 
   const dispatch = useDispatch();
-  const defaultTheme = useSelector(state => state.themeReducer.theme.title);
+  const defaultTheme = useSelector(state => state.themeReducerWITW.theme.title);
 
   const changeThemeHandler = () => {
     const theme = defaultTheme === 'light' 
