@@ -1,15 +1,15 @@
 import React from 'react';
 import { 
-  useState,
-  useEffect,
+  useState, useEffect,
 } from 'react';
 import axios from 'axios';
 import Card from '../components/main/card/Card';
 import List from '../components/main/list/List';
 import FormFilter from '../components/main/form/formFilter/FormFilter';
-import { ALL_COUNTRIES } from '../constants';
+import { 
+  ALL_COUNTRIES,
+} from '../constants';
 import styled from 'styled-components';
-
 
 const Span = styled.span`
   text-align: center;
@@ -43,6 +43,7 @@ const HomePage = ({countries, setCountries}) => {
     if(!countries.length){
       axios.get(ALL_COUNTRIES).then(({data}) => setCountries(data));
     }
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -87,9 +88,7 @@ const HomePage = ({countries, setCountries}) => {
           :
           <Span> There are no eligible countries </Span>
       }
-      
     </>
-    
   );
 };
 

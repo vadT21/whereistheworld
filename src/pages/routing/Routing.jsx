@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
-  Routes, 
-  Route,
+  Routes, Route,
 } from 'react-router-dom';
 import CountryPage from '../CountryPage';
 import HomePage from '../HomePage';
