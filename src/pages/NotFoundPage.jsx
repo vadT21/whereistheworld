@@ -1,8 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  margin: auto;
+  font-size: 1.25rem;
+  color: ${({theme}) => theme.color.text};
+`;
 
 const NotFoundPage = () => {
   return (
-    <div>NotFoundPage</div>
+    <Container>
+      Not Found Page
+    </Container>
   );
 };
 
