@@ -1,9 +1,21 @@
 import styled from 'styled-components';
+import {
+  device,
+} from '../../../styles/propoptions';
 
 export const Button = styled.button`
     margin-left: 1rem;
     width: 100px;
     padding: 0.25rem;
+    border-radius: ${({theme}) => theme.borderRadius};
+    box-shadow: ${({theme}) => theme.shadow};
+    background-color: ${({theme}) => theme.color.elements};
+    color: ${({theme}) => theme.color.text};
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 `;
 export const DetailsStyle = styled.section`
   padding: 1.25rem;
@@ -13,12 +25,12 @@ export const DetailsStyle = styled.section`
   grid-template-columns: 100%;
   gap: 2rem;
   color: ${({theme}) => theme.color.text};
-  @media (min-width: 767px) {
+  @media ${device.tablet}{
     grid-template-columns: minmax(100px, 400px) 1fr;
     align-items: center;
     gap: 5rem;
   }
-  @media (min-width: 1024px) {
+  @media ${device.laptopS}{
     grid-template-columns: minmax(400px, 600px) 1fr;
   }
 `;
@@ -27,7 +39,7 @@ export const DetailsImg = styled.img`
 display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   box-shadow: ${({theme}) => theme.shadow};
 
 `;
@@ -43,7 +55,7 @@ export const ListGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  @media (min-width: 1024px) {
+  @media ${device.laptopS}{
     flex-direction: row;
     gap: 4rem;
   }
@@ -65,7 +77,7 @@ export const Meta = styled.div`
   gap: 1.5rem;
   flex-direction: column;
   align-items: flex-start;
-  @media (min-width: 767px) {
+  @media ${device.tablet} {
     flex-direction: row;
     align-items: center;
   }
@@ -85,6 +97,6 @@ export const Tag = styled.span`
   background-color: ${({theme}) => theme.color.elements};
   color: ${({theme}) => theme.color.text};  
   box-shadow: ${({theme}) => theme.shadow};
-
+  border-radius: ${({theme}) => theme.borderRadius};
 `;
 

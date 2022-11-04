@@ -5,7 +5,12 @@ import {
 import { 
   useNavigate,
 } from 'react-router-dom';
-import { filterByCode } from '../../../constants';
+import { 
+  filterByCode,
+} from '../../../constants';
+import {
+  IoArrowBackOutline,
+} from 'react-icons/io5';
 import { 
   Tag, TagGroup, 
   Meta, Button, 
@@ -15,13 +20,13 @@ import {
   ListItem } from './components';
 
 const Details = (props) => {
-  const name = props.name.official;
-  const flags = props.flags.svg;
-  const region = props.region;
-  const subregion = props.subregion;
-  const population = props.population;
-  const capital = props.capital;
-  const tld = props.tld;
+  const name = props.name.official || '';
+  const flags = props.flags.svg || '';
+  const region = props.region || '';
+  const subregion = props.subregion || '';
+  const population = props.population || '';
+  const capital = props.capital || '';
+  const tld = props.tld || ''; 
   const currencies = Object.values(props.currencies) || [];
   const languages = Object.values(props.languages) || [];
   const nativeName = Object.values(props.name.nativeName).pop().official || '';
@@ -53,7 +58,10 @@ const Details = (props) => {
 
   return (
     <>
-      <Button onClick={() => navigate(-1)}>Back</Button>
+      <Button onClick={() => navigate(-1)}>
+        <IoArrowBackOutline />
+        Back
+      </Button>
       <DetailsStyle>
         <DetailsImg src={flags} alt={name}/>
         <DetailsInfo>
