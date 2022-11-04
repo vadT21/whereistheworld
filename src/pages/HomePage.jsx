@@ -32,7 +32,7 @@ const HomePage = ({countries, setCountries}) => {
 
     if(search) {
       data = data.filter( el => 
-        el.name.official.toLowerCase().includes(search.toLowerCase())
+        el.name.common.toLowerCase().includes(search.toLowerCase())
       );
     }
 
