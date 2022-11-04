@@ -1,10 +1,18 @@
-import React from 'react';
-import { SearchInput, SearchStyle } from './components';
+import {
+  useTransition,
+} from 'react';
+import { 
+  SearchInput, SearchStyle,
+} from './components';
 
 const SearchCountry = ({search, setSearch}) => {
 
+  const [isPending, startTransition] = useTransition();
+
   const changeHandler = (event) => {
-    setSearch(event.target.value);
+    startTransition(() => {
+      setSearch(event.target.value);
+    });
   };
 
   return (
