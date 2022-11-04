@@ -11,6 +11,8 @@ import {
   useSelector,
 } from 'react-redux';
 import Main from './components/main/main/Main';
+import Loader from './auxiliaries/Loader/Loader';
+import ErrorBoundary from './auxiliaries/ErrorBoundary/ErrorBoundary';
 
 const Routing = lazy( () => import('./pages/routing/Routing'));
 
@@ -21,16 +23,17 @@ function App() {
   const [countries, setCountries] = useState([]);
 
   return (
-    <Suspense fallback = {<div>Loading...</div>}>
-      <ThemeProvider theme={currentTheme}>
-        <Header />
-        <Main>
-          <Routing countries={countries} setCountries={setCountries}/>
-        </Main>
-        <GlobalStyles />
-      </ThemeProvider>
-    </Suspense>
-    
+    <ErrorBoundary>
+      <Suspense fallback = {<Loader />}>
+        <ThemeProvider theme={currentTheme}>
+          <Header />
+          <Main>
+            <Routing countries={countries} setCountries={setCountries}/>
+          </Main>
+          <GlobalStyles />
+        </ThemeProvider>
+      </Suspense>
+    </ErrorBoundary>    
   );
 }
 
