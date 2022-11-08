@@ -20,17 +20,20 @@ import {
   ListItem } from './components';
 
 const Details = (props) => {
+  const {
+    region = '',
+    subregion = '',
+    population = '',
+    capital = '',
+    tld = '', 
+    borders = [],
+  } = props;
   const name = props.name.official || '';
   const flags = props.flags.svg || '';
-  const region = props.region || '';
-  const subregion = props.subregion || '';
-  const population = props.population || '';
-  const capital = props.capital || '';
-  const tld = props.tld || ''; 
   const currencies = Object.values(props.currencies) || [];
   const languages = Object.values(props.languages) || [];
   const nativeName = Object.values(props.name.nativeName).pop().official || '';
-  const borders = props.borders || [];
+  
   const [neighbours, setNeighbours] = useState([]);
 
   useEffect(()=>{
